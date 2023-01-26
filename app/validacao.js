@@ -1,6 +1,10 @@
 function  verificaSeOChutePossuiUmValorValido(chute){
-    const numero = +chute
-
+    if (chute.toUpperCase()==='GAME OVER'){
+        document.body.innerHTML = `
+        <h2> Que pena o Jogo acabou !!!!</h2>`
+        document.body.style.backgroundColor = "black";
+    }
+    const numero = +chute    
     if (chuteForInvalido(numero)){
         elementoChute.innerHTML += '<div>Valor Inválido</div>'
         return
@@ -8,7 +12,7 @@ function  verificaSeOChutePossuiUmValorValido(chute){
     if (numeroForMaiorOuMenorQueoValorPermitido(numero)){
         elementoChute.innerHTML += `<div>Valor Inválido: O número precisa estar entre ${menorValor} e ${maiorValor}</div>`
         return//Ai não executa mais nada
-    }
+    }    
     if (numero === numeroSecreto){
         document.body.innerHTML = `
         <h2> Você acertou!</h2>
